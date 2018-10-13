@@ -18,7 +18,7 @@ OBJECTS_NO_MAIN := $(filter-out src/main.o,$(OBJECTS))
 $(info $(OBJECTS_NO_MAIN))
 
 %.o: %.cpp includes/%.hpp
-	g++ -c $(G_FLAGZ) $< -o $@
+	g++ -c $(G_FLAGZ) $< -o $@ -fPIC
 
 libsometype.so: $(OBJECTS)
 	$(LINK.c) -shared $< -o $@
